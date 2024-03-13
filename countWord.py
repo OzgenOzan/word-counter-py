@@ -27,7 +27,7 @@ def wordCount(fileName):
         d[word] = d.get(word,0) + 1
 
 def main():
-    files = getFileNames(r"C:\Users\oozgen\Desktop\Udemy\Sites\word-counter-py\Articles")
+    files = getFileNames(r"C:\Users\path")
     for file in files:
         wordCount(file)
 
