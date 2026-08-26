@@ -1,5 +1,6 @@
 import textract, re
 import os
+import sys
 import pandas as pd
 
 d = {}
@@ -29,12 +30,14 @@ def wordCount(fileName):
 def main():
     files = getFileNames(r"C:\Users\path")
     for file in files:
-        wordCount(file)
+        try:
+            wordCount(file)
+        except Exception as e:
+            print(f"Skipping {file}: {e}", file=sys.stderr)
+            continue
 
     df = pd.DataFrame(list(d.items()),columns = ['Word','Count'])
-    df.to_excel("output.xlsx")
+    df.to_excel("output.xlsx", index=False)
 
 if __name__ == "__main__":
     main()
-
-

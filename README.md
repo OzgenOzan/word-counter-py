@@ -21,3 +21,35 @@ End Sub
 ```
 
 I want to develop this algorithm into a web aplication.
+
+## Installation
+
+Python 3.9+ recommended.
+
+```
+pip install -r requirements.txt
+```
+
+`textract` relies on external system binaries to parse documents. On
+Debian/Ubuntu:
+
+```
+sudo apt-get install poppler-utils antiword
+```
+
+(See the [textract documentation](https://textract.readthedocs.io/) for other
+platforms.)
+
+## Usage
+
+1. Set the documents folder in `main()` (`getFileNames(...)` call in
+   `countWord.py`).
+2. Run: `python countWord.py`
+3. Counts are written to `output.xlsx` (`Word`, `Count` columns). Files that
+   fail to parse are skipped with a warning on stderr instead of aborting the
+   whole run.
+
+## Data notice
+
+The PDF files in `Articles/` are third-party copyrighted publications and are
+scheduled to be replaced by a citation list (owner action pending).
