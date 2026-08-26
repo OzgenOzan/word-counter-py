@@ -1,0 +1,11 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Generated output (regenerate by running countWord.py)
+output.xlsx
+
+# OS files
+.DS_Store
+Thumbs.db
